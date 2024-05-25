@@ -1,19 +1,33 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ProductMarketingApp.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configure Entity Framework Core with SQL Server
+// Configure Entity Framework Core with SQLite
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Configure authentication
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie();
 
 // Configure Identity
-// builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-//     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+    {
+        options.SignIn.RequireConfirmedAccount = true;
+        options.Password.RequireDigit = false;
+        options.Password.RequireLowercase = false;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequiredLength = 6; // Set to the minimum length you prefer
+    })
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 var app = builder.Build();
 
@@ -35,6 +49,23 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapRazorPages();
+
+// Map routes for Products controller
+app.MapControllerRoute(
+    name: "products",
+    pattern: "Products/{action=Index}/{id?}",
+    defaults: new { controller = "Products" });
+
+// Map routes for Account controller
+app.MapControllerRoute(
+    name: "account",
+    pattern: "Account/{action=Login}/{id?}",
+    defaults: new { controller = "Account" });
+
+// Map routes for Account controller (Register)
+app.MapControllerRoute(
+    name: "accountRegister",
+    pattern: "Account/{action=Register}/{id?}",
+    defaults: new { controller = "Account"});
 
 app.Run();

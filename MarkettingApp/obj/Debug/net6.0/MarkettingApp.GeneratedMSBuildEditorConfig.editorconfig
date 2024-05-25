@@ -15,12 +15,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/nathan/Documents/Freelance/Marketing-App/MarkettingApp
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9SZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
+[/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUHJvZHVjdHMvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/Views/Shared/Error.cshtml]
