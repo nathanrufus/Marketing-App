@@ -1,4 +1,4 @@
-@model ProductMarketingApp.Models.Product
+@model ProductMarketingApp.Models.ProductViewModel
 
 @{
     ViewBag.Title = "Edit Product";
@@ -6,7 +6,7 @@
 
 <h2>Edit Product</h2>
 
-<form asp-action="Edit" method="post">
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label asp-for="Title" class="control-label"></label>
         <input asp-for="Title" class="form-control" />
@@ -18,21 +18,15 @@
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="ImagePath" class="control-label"></label>
-        <input asp-for="ImagePath" class="form-control" />
-        <span asp-validation-for="ImagePath" class="text-danger"></span>
+        <label asp-for="Image" class="control-label"></label>
+        <input asp-for="Image" type="file" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="DatePosted" class="control-label"></label>
-        <input asp-for="DatePosted" class="form-control" />
-        <span asp-validation-for="DatePosted" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="UserId" class="control-label"></label>
-        <input asp-for="UserId" class="form-control" />
-        <span asp-validation-for="UserId" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </div>
+    <input type="hidden" asp-for="ProductId" />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

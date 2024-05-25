@@ -25,12 +25,22 @@
             @Model.Description
         </dd>
         <dt class="col-sm-2">
-            ImagePath
+            Image Path
         </dt>
         <dd class="col-sm-10">
             @Model.ImagePath
         </dd>
         <dt class="col-sm-2">
-            DatePosted
+            Date Posted
         </dt>
-       
+        <dd class="col-sm-10">
+            @Model.DatePosted
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="ProductId" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>

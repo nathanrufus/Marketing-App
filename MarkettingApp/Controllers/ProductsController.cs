@@ -158,6 +158,7 @@ namespace ProductMarketingApp.Controllers
             return View(product);
         }
 
+        [HttpGet]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -166,7 +167,7 @@ namespace ProductMarketingApp.Controllers
             }
 
             var product = await _context.Products
-                ?.Include(p => p.User)
+                .Include(p => p.User)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
             if (product == null)
             {
@@ -197,5 +198,6 @@ namespace ProductMarketingApp.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
     }
 }
