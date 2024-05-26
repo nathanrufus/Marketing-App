@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ufs0ahJK6+VpnjY6B0h7niheJSMCs4JX1Z8VvuWwYPc=",
+  "Hash": "tgyFZACx4NELdYsKwTYiOWesY80svUN3SZJ3/6ntaG4=",
   "Source": "MarkettingApp",
   "BasePath": "_content/MarkettingApp",
   "Mode": "Default",
@@ -1105,6 +1105,40 @@
       "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
+      "Identity": "/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/wwwroot/images/15d166cf-0e8b-494a-89ff-ee7a15e166c1_mattress.jpg",
+      "SourceId": "MarkettingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/wwwroot/",
+      "BasePath": "_content/MarkettingApp",
+      "RelativePath": "images/15d166cf-0e8b-494a-89ff-ee7a15e166c1_mattress.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/15d166cf-0e8b-494a-89ff-ee7a15e166c1_mattress.jpg"
+    },
+    {
+      "Identity": "/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/wwwroot/images/3b996bb8-eb0f-4694-9619-8ab46169a15f_chair.jpeg",
+      "SourceId": "MarkettingApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/wwwroot/",
+      "BasePath": "_content/MarkettingApp",
+      "RelativePath": "images/3b996bb8-eb0f-4694-9619-8ab46169a15f_chair.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/3b996bb8-eb0f-4694-9619-8ab46169a15f_chair.jpeg"
+    },
+    {
       "Identity": "/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/wwwroot/images/c545d1c0-77ca-4a45-8ab4-d816f3832712_sma.jpg",
       "SourceId": "MarkettingApp",
       "SourceType": "Discovered",
@@ -1120,23 +1154,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/c545d1c0-77ca-4a45-8ab4-d816f3832712_sma.jpg"
-    },
-    {
-      "Identity": "/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/wwwroot/images/d18dbd55-0cd7-490b-bd13-99655ebbaba3_sm2.jpg",
-      "SourceId": "MarkettingApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/wwwroot/",
-      "BasePath": "_content/MarkettingApp",
-      "RelativePath": "images/d18dbd55-0cd7-490b-bd13-99655ebbaba3_sm2.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/d18dbd55-0cd7-490b-bd13-99655ebbaba3_sm2.jpg"
     },
     {
       "Identity": "/home/nathan/Documents/Freelance/Marketing-App/MarkettingApp/wwwroot/js/site.js",

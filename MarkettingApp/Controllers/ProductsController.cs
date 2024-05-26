@@ -11,7 +11,6 @@ using System;
 
 namespace ProductMarketingApp.Controllers
 {
-    [Authorize]
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -29,6 +28,7 @@ namespace ProductMarketingApp.Controllers
             return View(products);
         }
 
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -36,6 +36,7 @@ namespace ProductMarketingApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create(ProductViewModel model)
         {
             if (ModelState.IsValid)
@@ -68,6 +69,24 @@ namespace ProductMarketingApp.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(model);
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products
+                ?.Include(p => p.User)
+                .FirstOrDefaultAsync(m => m.ProductId == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
         }
 
         public async Task<IActionResult> Edit(int? id)
@@ -140,25 +159,7 @@ namespace ProductMarketingApp.Controllers
             return View(model);
         }
 
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var product = await _context.Products
-                ?.Include(p => p.User)
-                .FirstOrDefaultAsync(m => m.ProductId == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-
-            return View(product);
-        }
-
-        [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -199,5 +200,13 @@ namespace ProductMarketingApp.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> MyPosts()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var products = await _context.Products
+                                         .Where(p => p.UserId == user.Id)
+                                         .ToListAsync();
+            return View(products);
+        }
     }
 }

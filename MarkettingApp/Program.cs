@@ -20,7 +20,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 // Configure Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     {
-        options.SignIn.RequireConfirmedAccount = true;
+        options.SignIn.RequireConfirmedAccount = false;
         options.Password.RequireDigit = false;
         options.Password.RequireLowercase = false;
         options.Password.RequireNonAlphanumeric = false;
@@ -55,6 +55,13 @@ app.MapControllerRoute(
     name: "products",
     pattern: "Products/{action=Index}/{id?}",
     defaults: new { controller = "Products" });
+
+// Map route for viewing user's posts
+app.MapControllerRoute(
+    name: "myPosts",
+    pattern: "Products/MyPosts",
+    defaults: new { controller = "Products", action = "MyPosts" });
+
 
 // Map routes for Account controller
 app.MapControllerRoute(

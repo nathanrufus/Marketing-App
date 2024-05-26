@@ -32,8 +32,7 @@ namespace ProductMarketingApp.Controllers
 
                 if (result.Succeeded)
                 {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home"); // Updated action name and controller
+                    return RedirectToAction("Login", "Account"); // Redirect to Login page after successful registration
                 }
 
                 foreach (var error in result.Errors)
@@ -60,7 +59,7 @@ namespace ProductMarketingApp.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Product");
+                    return RedirectToAction("Index", "Products"); // Redirect to Products index page after successful login
                 }
 
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
